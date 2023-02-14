@@ -7025,11 +7025,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aleks\\Documents\\PhoneShop\\PhoneShop\\PhoneShop.csproj",
+      "projectUniqueName": "C:\\Users\\aleks\\Documents\\alex\\PhoneShop\\PhoneShop\\PhoneShop.csproj",
       "projectName": "PhoneShop",
-      "projectPath": "C:\\Users\\aleks\\Documents\\PhoneShop\\PhoneShop\\PhoneShop.csproj",
+      "projectPath": "C:\\Users\\aleks\\Documents\\alex\\PhoneShop\\PhoneShop\\PhoneShop.csproj",
       "packagesPath": "C:\\Users\\aleks\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aleks\\Documents\\PhoneShop\\PhoneShop\\obj\\",
+      "outputPath": "C:\\Users\\aleks\\Documents\\alex\\PhoneShop\\PhoneShop\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\aleks\\AppData\\Roaming\\NuGet\\NuGet.Config",

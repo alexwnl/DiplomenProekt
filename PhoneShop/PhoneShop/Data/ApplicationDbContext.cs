@@ -15,7 +15,7 @@ namespace PhoneShop.Data
             this.Database.EnsureCreated();
         }
         public DbSet<Phone> Phones { get; set; }
-        public DbSet<Model> Models { get; set; }
+        public DbSet<Brand> Brands { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
     }

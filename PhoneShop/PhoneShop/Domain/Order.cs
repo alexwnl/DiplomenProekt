@@ -18,7 +18,10 @@ namespace PhoneShop.Domain
         public virtual ApplicationUser User { get; set; }
         [Required]
         public int Quantity { get; set; }
+        [Required]
+        [Range(300,3000)]
         public decimal Price { get; set; }
+        [Range(0, 15)]//ot 0 do 15% otstupka
         public decimal Discount { get; set; }
         public decimal TotalPrice
         {
