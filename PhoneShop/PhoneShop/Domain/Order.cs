@@ -19,9 +19,9 @@ namespace PhoneShop.Domain
         [Required]
         public int Quantity { get; set; }
         [Required]
-        [Range(300,3000)]
+        [Range(0,3000)]
         public decimal Price { get; set; }
-        [Range(0, 15)]//ot 0 do 15% otstupka
+        [Range(0, 100)]
         public decimal Discount { get; set; }
         public decimal TotalPrice
         {

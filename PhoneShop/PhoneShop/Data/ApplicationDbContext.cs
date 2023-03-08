@@ -18,5 +18,6 @@ namespace PhoneShop.Data
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public IEnumerable<object> Products { get; internal set; }
     }
 }
