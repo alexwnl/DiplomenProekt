@@ -40,6 +40,7 @@ namespace PhoneShop.Infrastructure
                 new Brand {BrandName="Nokia"},
                 new Brand {BrandName="Xiaomi"}
             });
+            dataBrand.SaveChanges();
         }
 
         private static void SeedCategories(ApplicationDbContext dataCategory)

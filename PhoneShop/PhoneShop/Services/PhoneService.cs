@@ -15,13 +15,15 @@ namespace PhoneShop.Services
         {
             _context = context;
         }
-        public bool Create(string name, int brandId, int categoryId, string picture, int quantity, decimal price, decimal discount)
+        public bool Create(string name, int brandId, int categoryId, string picture,string color,string description, int quantity, decimal price, decimal discount)
         {
             Phone item = new Phone
             {
-                // PhoneName= name,
+                PhoneBrand = name,
                 Brand = _context.Brands.Find(brandId),
                 Category = _context.Categories.Find(categoryId),
+                Color = color,
+                Description = description,
                 Picture = picture,
                 Quantity = quantity,
                 Price = price,
@@ -87,6 +89,11 @@ namespace PhoneShop.Services
         }
 
         public List<Phone> GetProducts()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Update(int phoneId, string name, int brandId, int categoryId, string color, string description, string picture, int quantity, decimal price, decimal discount)
         {
             throw new NotImplementedException();
         }

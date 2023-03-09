@@ -1247,3 +1247,4 @@ C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.
 C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Areas\Identity\Pages\Account\_ViewImports.cshtml.g.cs
 C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
+C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Views\Phone\Create.cshtml.g.cs
