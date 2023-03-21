@@ -3,6 +3,7 @@ using PhoneShop.Data;
 using PhoneShop.Domain;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Net.Http.Headers;
 
@@ -15,15 +16,15 @@ namespace PhoneShop.Services
         {
             _context = context;
         }
-        public bool Create(string name, int brandId, int categoryId, string picture,string color,string description, int quantity, decimal price, decimal discount)
+        public bool Create(string model, int brandId, int categoryId, string picture,string description, string color, int quantity, decimal price, decimal discount)
         {
             Phone item = new Phone
             {
-                PhoneBrand = name,
+                Model = model,
                 Brand = _context.Brands.Find(brandId),
                 Category = _context.Categories.Find(categoryId),
-                Color = color,
                 Description = description,
+                Color = color,
                 Picture = picture,
                 Quantity = quantity,
                 Price = price,
@@ -38,6 +39,7 @@ namespace PhoneShop.Services
         }
         public List<Phone> GetPhones()
         {
+            List<Phone> phones = _context.Phones.ToList();
             return _context.Phones.ToList();
         }
         public bool RemoveById(int phoneId)
@@ -68,19 +70,22 @@ namespace PhoneShop.Services
             }
             return phones;
         }
-        public bool Update(int phoneId,string name,int brandId,int categoryId,string picture,int quantity,decimal price,decimal discount)
+        public bool Update(int phoneId,string model,int brandId,int categoryId,string picture, string description,string color, int quantity,decimal price,decimal discount)
         {
             var phone = GetPhoneById(phoneId);
             if (phone == default(Phone))
             {
                 return false;
             }
-           // phone.PhoneName= name
+            //phone.PhoneName= name
+            phone.Model = model;
             phone.BrandId= brandId;
             phone.CategoryId= categoryId;
             phone.Brand = _context.Brands.Find(brandId);
             phone.Category = _context.Categories.Find(categoryId);
             phone.Picture = picture;
+            phone.Description = description;
+            phone.Color = color;
             phone.Quantity = quantity;
             phone.Price = price;
             phone.Discount = discount;
@@ -88,15 +93,8 @@ namespace PhoneShop.Services
             return _context.SaveChanges() != 0;
         }
 
-        public List<Phone> GetProducts()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Update(int phoneId, string name, int brandId, int categoryId, string color, string description, string picture, int quantity, decimal price, decimal discount)
-        {
-            throw new NotImplementedException();
-        }
+       
+    
     }
 }
 

@@ -7,6 +7,6 @@ namespace PhoneShop.Abstraction
     {
         List<Brand> GetBrands();
         Brand GetBrandById(int brandId);
-        List<Phone> GetProductsByBrand(int brandId);
+        List<Phone> GetPhonesByBrand(int brandId);
     }
 }

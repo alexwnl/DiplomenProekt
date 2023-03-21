@@ -5,10 +5,10 @@ namespace PhoneShop.Abstraction
 {
     public interface IPhoneService
     {
-        bool Create(string name, int brandId, int categoryId, string color ,string description,string picture, int quantity, decimal price, decimal discount);
-        bool Update(int phoneId,string name, int brandId,int categoryId, string color, string description,string picture,int quantity, decimal price, decimal discount);
-        List<Phone> GetProducts();
-            Phone GetPhoneById(int phoneId);
+        bool Create(string model, int brandId, int categoryId, string description, string color, string picture, int quantity, decimal price, decimal discount);
+        bool Update(int phoneId, string model, int brandId, int categoryId, string description, string color, string picture, int quantity, decimal price, decimal discount);
+        List<Phone> GetPhones();
+        Phone GetPhoneById(int phoneId);
         bool RemoveById(int phoneId);
         List<Phone> GetPhones(string searchStringCategoryName, string searchStringBrandName);
     }

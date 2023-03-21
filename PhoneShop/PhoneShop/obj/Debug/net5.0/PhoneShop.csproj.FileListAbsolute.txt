@@ -1222,7 +1222,6 @@ C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.
 C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\PhoneShop.TagHelpers.output.cache
 C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\PhoneShop.RazorCoreGenerate.cache
 C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
-C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -1248,3 +1247,14 @@ C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.
 C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Views\Phone\Create.cshtml.g.cs
+C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Views\Phone\Index.cshtml.g.cs
+C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Views\Phone\Details.cshtml.g.cs
+C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Views\Phone\Edit.cshtml.g.cs
+C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Views\Phone\Delete.cshtml.g.cs
+C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Views\Phone\CreateSucces.cshtml.g.cs
+C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Views\Phone\DeleteSucces.cshtml.g.cs
+C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Views\Phone\_OrderPartialView.cshtml.g.cs
+C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Views\Order\Index.cshtml.g.cs
+C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Views\Order\MyOrders.cshtml.g.cs
+C:\Users\aleks\Documents\alex\DiplomenProekt\PhoneShop\PhoneShop\obj\Debug\net5.0\Razor\Views\Order\Create.cshtml.g.cs

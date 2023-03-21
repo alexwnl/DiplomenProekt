@@ -24,7 +24,7 @@ namespace PhoneShop.Services
             return _context.Categories.Find(categoryId);
         }
 
-        public List<Phone> GetProductsByCategory(int categoryId)
+        public List<Phone> GetPhonesByCategory(int categoryId)
         {
             return _context.Phones
                .Where(x => x.BrandId == categoryId)

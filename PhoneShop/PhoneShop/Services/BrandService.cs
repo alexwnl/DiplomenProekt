@@ -25,7 +25,7 @@ namespace PhoneShop.Services
             return brands;
         }
 
-        public List<Phone> GetProductsByBrand(int brandId)
+        public List<Phone> GetPhonesByBrand(int brandId)
         {
             return _context.Phones
                 .Where(x => x.BrandId == brandId)   

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using PhoneShop.Models.Phone;
+using PhoneShop.Models.Order;
 
 namespace PhoneShop.Data
 {
@@ -21,5 +22,11 @@ namespace PhoneShop.Data
         public DbSet<Order> Orders { get; set; }
         public IEnumerable<object> Products { get; internal set; }
         public DbSet<PhoneShop.Models.Phone.PhoneCreateVM> PhoneCreateVM { get; set; }
+        public DbSet<PhoneShop.Models.Phone.PhoneIndexVM> PhoneIndexVM { get; set; }
+        public DbSet<PhoneShop.Models.Phone.PhoneEditVM> PhoneEditVM { get; set; }
+        public DbSet<PhoneShop.Models.Phone.PhoneDetailsVM> PhoneDetailsVM { get; set; }
+        public DbSet<PhoneShop.Models.Phone.PhoneDeleteVM> PhoneDeleteVM { get; set; }
+        public DbSet<PhoneShop.Models.Order.OrderConfirmVM> OrderConfirmVM { get; set; }
+        public DbSet<PhoneShop.Models.Order.OrderIndexVM> OrderIndexVM { get; set; }
     }
 }

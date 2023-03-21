@@ -7,6 +7,6 @@ namespace PhoneShop.Abstraction
     {
         List<Category> GetCategories();
         Category GetCategoryById(int categoryId);
-        List<Phone> GetProductsByCategory(int categoryId);
+        List<Phone> GetPhonesByCategory(int categoryId);
     }
 }
