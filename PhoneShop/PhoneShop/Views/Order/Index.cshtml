@@ -26,11 +26,9 @@
                 @Html.DisplayNameFor(model => model.PhoneId)
             </th>*@
             <th>
-                @Html.DisplayNameFor(model => model.Phone)
+                @Html.DisplayNameFor(model => model.Model)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Brand)
-            </th>
+            
             <th>
                 @Html.DisplayNameFor(model => model.Picture)
             </th>
@@ -65,11 +63,9 @@
                 @Html.DisplayFor(modelItem => item.PhoneId)
                 </td>*@
             <td>
-                @Html.DisplayFor(modelItem => item.Phone)
+                @Html.DisplayFor(modelItem => item.Model)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Brand)
-            </td>
+          
             <td>
                     <img src="@Html.DisplayFor(modelItem => item.Picture)" alt="Image" width="100" />
                @* @Html.DisplayFor(modelItem => item.Picture)*@

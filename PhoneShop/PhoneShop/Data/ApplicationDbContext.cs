@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using PhoneShop.Models.Phone;
 using PhoneShop.Models.Order;
+using PhoneShop.Models.Client;
 
 namespace PhoneShop.Data
 {
@@ -28,5 +29,6 @@ namespace PhoneShop.Data
         public DbSet<PhoneShop.Models.Phone.PhoneDeleteVM> PhoneDeleteVM { get; set; }
         public DbSet<PhoneShop.Models.Order.OrderConfirmVM> OrderConfirmVM { get; set; }
         public DbSet<PhoneShop.Models.Order.OrderIndexVM> OrderIndexVM { get; set; }
+        public DbSet<PhoneShop.Models.Client.ClientIndexVM> ClientIndexVM { get; set; }
     }
 }

@@ -1,4 +1,12 @@
 ﻿<!DOCTYPE html>
+<style>
+
+   body {
+        background: linear-gradient(to bottom, #de6262, #ffb88c);
+}
+
+
+</style>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -24,7 +32,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="MyOrders">MyOrders</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Phone" asp-action="Index">Phones</a>
                         </li>
@@ -42,8 +52,9 @@
                              </a>
                               
                           <div class="dropdown-menu" aria-labelledby="dropdown MenuLink">
-                                     <a class="dropdown-item"href="/Statistics/Clients">Clients</a>
+                                     <a class="dropdown-item" asp-controller="Client"asp-action="Index">Clients</a>
                                      <a class="dropdown-item" href="/Statistics/Orders">Orders</a>
+                                        <a class="dropdown-item" asp-controller="Statistics" asp-action="Index">Statistics</a>
                               </div>
                               </div>
                               </li>
@@ -70,4 +81,5 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>

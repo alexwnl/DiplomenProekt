@@ -32,6 +32,7 @@ namespace PhoneShop
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IPhoneService, PhoneService>();
+            services.AddTransient<IStatisticsService, StatisticsService>();
             services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IBrandService, BrandService>();
             services.AddDbContext<ApplicationDbContext>(options =>

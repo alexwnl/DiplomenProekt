@@ -34,12 +34,7 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Model)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Brand)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Brand)
-        </dd>
+        
         <dt class = "col-sm-2">
                 <img src="@Html.DisplayFor(model => model.Picture)" alt="Image" width="100" />
         </dt>
@@ -82,11 +77,6 @@
     <input type="hidden" asp-for="Discount" value="@Model.Discount" />
 </form>
 <div>
-    <a asp-controller="Product" asp-action="Index">Back to List</a>
+    <a asp-controller="Phone" asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}

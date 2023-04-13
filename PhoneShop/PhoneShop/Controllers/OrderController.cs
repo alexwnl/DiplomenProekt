@@ -7,10 +7,14 @@ using System.Security.Claims;
 using System;
 using System.Linq;
 using System.Globalization;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace PhoneShop.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class OrderController : Controller
+
     {
         private readonly ApplicationDbContext _context;
         public OrderController(ApplicationDbContext context)
@@ -28,8 +32,9 @@ namespace PhoneShop.Controllers
                     UserId = x.UserId,
                     User = x.User.UserName,
                     PhoneId = x.PhoneId,
-                    Phone = x.Phone.Model,
-                    Picture = x.Phone.Picture,
+                    Model = x.Model.Model,
+                    
+                    Picture = x.Model.Picture,
                     Quantity = x.Quantity,
                     Price = x.Price,
                     Discount = x.Discount,
@@ -37,6 +42,7 @@ namespace PhoneShop.Controllers
                 }).ToList();
             return View(orders);
         }
+        [AllowAnonymous]
         public IActionResult MyOrders(string searchString)
         {
             string currentUserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -52,8 +58,8 @@ namespace PhoneShop.Controllers
                     UserId = x.UserId,
                     User = x.User.UserName,
                     PhoneId = x.PhoneId,
-                    Phone = x.Phone.Model,
-                    Picture = x.Phone.Picture,
+                    Model = x.Model.Model,
+                    Picture = x.Model.Picture,
                     Quantity = x.Quantity,
                     Price = x.Price,
                     Discount = x.Discount,
@@ -61,11 +67,11 @@ namespace PhoneShop.Controllers
                 }).ToList();
 
             if (!String.IsNullOrEmpty(searchString))
-            { orders = orders.Where(o => o.Phone.ToLower().Contains(searchString.ToLower())).ToList(); }
+            { orders = orders.Where(o => o.Model.ToLower().Contains(searchString.ToLower())).ToList(); }
             return this.View(orders);
 
         }
-
+        [AllowAnonymous]
         public ActionResult Create(int phoneId, int quantity)
         {
             string userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -82,7 +88,6 @@ namespace PhoneShop.Controllers
                 PhoneId = phoneId,
                 Model = phone.Model,
                 Picture = phone.Picture,
-                
                 Quantity = quantity,
                 Price = phone.Price,
                 Discount = phone.Discount,

@@ -12,8 +12,9 @@ namespace PhoneShop.Domain
         public DateTime OrderDate { get; set; }
         [Required]
         public int PhoneId { get; set; }
-        public virtual Phone Phone { get; set; }
+        public virtual Phone Model { get; set; }
         [Required]
+       // public string Brand { get; set; }
         public string UserId { get; set; }
         public virtual ApplicationUser User { get; set; }
         [Required]
