@@ -7,6 +7,7 @@ using System.Text;
 using PhoneShop.Models.Phone;
 using PhoneShop.Models.Order;
 using PhoneShop.Models.Client;
+using PhoneShop.Models.ContactUs;
 
 namespace PhoneShop.Data
 {
@@ -21,7 +22,7 @@ namespace PhoneShop.Data
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public IEnumerable<object> Products { get; internal set; }
+        
         public DbSet<PhoneShop.Models.Phone.PhoneCreateVM> PhoneCreateVM { get; set; }
         public DbSet<PhoneShop.Models.Phone.PhoneIndexVM> PhoneIndexVM { get; set; }
         public DbSet<PhoneShop.Models.Phone.PhoneEditVM> PhoneEditVM { get; set; }
@@ -30,5 +31,7 @@ namespace PhoneShop.Data
         public DbSet<PhoneShop.Models.Order.OrderConfirmVM> OrderConfirmVM { get; set; }
         public DbSet<PhoneShop.Models.Order.OrderIndexVM> OrderIndexVM { get; set; }
         public DbSet<PhoneShop.Models.Client.ClientIndexVM> ClientIndexVM { get; set; }
+       
+        public DbSet<ContactMessage> ContactMessages { get; set; }
     }
 }

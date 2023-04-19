@@ -2,7 +2,200 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+<style>
+
+    .parent {
+        text-align: center; /* center the child element horizontally */
+    }
+
+    .slideshow {
+        max-width: 1000px; /* set the maximum width of the slideshow */
+        margin: 0 auto; /* center the slideshow horizontally */
+        border-radius: 25px; /* add rounded corners */
+        overflow: hidden; /* hide any parts of the images that extend beyond the container */
+    }
+
+    .slideshow {
+        width: 120%;
+        height: 600px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .slideshow img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .slideshow img:first-child {
+        opacity: 1;
+    }
+
+    @@keyframes slideshow {
+        0% {
+            opacity: 0;
+        }
+
+        20% {
+            opacity: 1;
+        }
+
+        40% {
+            opacity: 1;
+        }
+
+        60% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .slideshow img:nth-child(1) {
+        animation: slideshow 9s linear infinite;
+    }
+
+    .slideshow img:nth-child(2) {
+        animation: slideshow 9s linear infinite;
+        animation-delay: 4s;
+    }
+
+    .slideshow img:nth-child(3) {
+        animation: slideshow 9s linear infinite;
+        animation-delay: 8s;
+    }
+
+    .slideshow img:nth-child(4) {
+        animation: slideshow 9s linear infinite;
+        animation-delay: 12s;
+    }
+
+    .slideshow img:nth-child(5) {
+        animation: slideshow 9s linear infinite;
+        animation-delay: 16s;
+    }
+    .slideshow {
+  margin-bottom: 20px; /* add a bottom margin */
+}
+
+.product-container {
+  margin-top: 20px; /* add a top margin */
+}
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  width: 200px;
+  margin: 10px;
+}
+
+</style>
+
+<div class="slideshow">
+    <img src="https://pisces.bbystatic.com/image2/BestBuy_US/dam/SOL-105011-dp-hero-sv-3687ade8-4b42-491a-a339-5e5a4a232bfd.jpg">
+    <img src="https://www.huaweicentral.com/wp-content/uploads/2021/05/huawei-p50-render-leak-img-2.jpg">
+    <img src="https://s3b.cashify.in/gpro/uploads/2022/08/19180505/iPhone-14-Pro-Everything-You-Need-To-Know.jpg">
+    <img src="https://blog.admixer.com/wp-content/uploads/2020/05/mi-cover-1616x790-1.png">
+    <img src="https://i.ytimg.com/vi/TBTgQbjRsqg/maxresdefault.jpg">
 </div>
+<style>
+  
+    .navbar {
+        background-color: #333;
+        border-radius: 25px; /* add rounded corners */
+        height: 65px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+
+        .nav-links li {
+            margin: 0 10px;
+        }
+
+        .nav-links a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 20px; /* add rounded corners */
+        }
+
+            .nav-links a:hover {
+                background-color: #000000;
+            }
+
+</style>
+<style>
+    .card {
+        border: none;
+        box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.3);
+        border-radius: 100px; /* increase the border-radius value */
+    }
+
+    .product-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .product {
+        width: 300px;
+        margin: 10px;
+    }
+</style>
+
+
+    <!-- Add some space here -->
+    <div style="height: 15px;"></div>
+
+    <!-- Product container -->
+    <div class="product-container">
+        <div class="product">
+            <div class="card rounded">
+                
+                <img src="https://www.timobile.bg/wp-content/uploads/2023/02/00157063605851009_2__640x640.jpg" alt="Product Image" class="card-img-top">
+                <div class="card-body">
+                    <h3 class="card-title">Samsung S23</h3>
+                    <p class="card-text">$999.99</p>
+                </div>
+            </div>
+        </div>
+        <div class="product">
+            <div class="card rounded">
+            <img src="https://m.media-amazon.com/images/I/71emcsxsRPL._SL1500_.jpg" alt="Product Image" class="card-img-top">
+                <div class="card-body">
+                    <h3 class="card-title">Iphone 14 Plus</h3>
+                    <p class="card-text">$1100.00</p>
+                </div>
+            </div>
+        </div>
+    <div class="product">
+        <div class="card rounded">
+            <img src="https://s13emagst.akamaized.net/products/42716/42715101/images/res_7e0e6f28ec695a331126d1235b4c13b0.jpg" alt="Product Image" class="card-img-top">
+            <div class="card-body">
+                <h3 class="card-title">Huawei P50</h3>
+                <p class="card-text">$899.99</p>
+            </div>
+        </div>
+    </div>
+
+

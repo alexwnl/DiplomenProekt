@@ -25,7 +25,7 @@ namespace PhoneShop.Services
 
         public int CountProducts()
         {
-            return _context.Products.Count();
+            return _context.Phones.Count();
         }
 
         public decimal SumOrders()

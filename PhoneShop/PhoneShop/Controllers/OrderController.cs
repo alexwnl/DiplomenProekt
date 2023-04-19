@@ -98,6 +98,7 @@ namespace PhoneShop.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public ActionResult Create(OrderConfirmVM bindingModel)
         {
             if (this.ModelState.IsValid)

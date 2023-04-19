@@ -1,127 +1,189 @@
 ﻿@using PhoneShop.Models.Order;
 @model IEnumerable<PhoneShop.Models.Phone.PhoneIndexVM>
 
-@{
-    ViewData["Title"] = "Index";
+
+<style>
+    .navbar {
+        border-radius: 25px; /* add rounded corners */
+        display: flex;
+        align-items: center;
+        background-color: #333;
+        padding: 10px;
+        height: 70px;
+    }
+
+        .navbar img {
+            width: 81px;
+            margin-right: 10px;
+        }
+
+    .nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+        .nav-links li {
+            margin: 0 10px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+    a.navbar-brand {
+        white-space: normal;
+        text-align: center;
+        word-break: break-all;
+    }
+    .table td {
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+    }
+    .button-wrapper {
+  display: inline-block;
 }
 
-<h1>Index</h1>
+.button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+        background-color: #6495ED;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+            background-color: #0066ff;
+}
+
+    .filter-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f2f2f2;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .filter-item {
+        margin-right: 10px;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    select {
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    input[type="submit"] {
+        padding: 5px 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        input[type="submit"]:hover {
+            background-color: #0069d9;
+        }
+
+</style>
+
+
 @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
 {
-    <p>
-        <a asp-action="Create">Create New</a>
-    </p>
+    <div class="button-wrapper">
+        <a class="button" asp-action="Create">Create New</a>
+    </div>
 }
+<div style="height: 15px;"></div>
+
 <form asp-controller="Phone" asp-action="Index" method="get">
- <p>
-     Brand: <input type="text" name="SearchStringBrandName" />
-     Category: <input type="text" name="SearchStringCategoryName" />
-     <input type="submit" value="Filter" />
- </p>
- </form>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Model)
-            </th>
-           @* <th>
-                @Html.DisplayNameFor(model => model.BrandId)
-            </th>*@
-            <th>
-                @Html.DisplayNameFor(model => model.BrandName)
-            </th>
-            @*<th>
-                @Html.DisplayNameFor(model => model.CategoryId)
-            </th>*@
-            <th>
-                @Html.DisplayNameFor(model => model.CategoryName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Picture)
-            </th>
-           @* <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>*@
-            <th>
-                @Html.DisplayNameFor(model => model.Color)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Quantity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Discount)
-            </th>
+    <div class="filter-container">
+        <div class="filter-item">
+            <label for="brand">Brand:</label>
+            <select name="SearchStringBrandName" id="brand">
+                <option value="">All Brands</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Apple">Apple</option>
+                <option value="Huawei">Huawei</option>
+                <option value="Nokia">Nokia</option>
+                <option value="Xiaomi">Xiaomi</option>
+                <!-- Add more brand options here -->
+            </select>
+        </div>
+        <div class="filter-item">
+            <label for="category">Category:</label>
+            <select name="SearchStringCategoryName" id="category">
+                <option value="">All Categories</option>
+                <option value="Mobile">Mobile Phone</option>
+                <option value="Accessory">Accessory</option>
+                <option value="Smart Watch">Smart Watch</option>
+                <!-- Add more category options here -->
+            </select>
+        </div>
+        <div class="filter-item">
+            <input type="submit" value="Filter" />
+        </div>
+    </div>
+</form>
+
+
+<div style="height: 15px;"></div>
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+    @foreach (var item in Model)
+    {
+        <div style="background-color: #f2f2f2; border-radius: 10px; padding: 10px; margin-bottom: 10px; flex-basis: 32%; box-sizing: border-box;">
+            <div style="text-align: center;">
+                <img src="@Html.DisplayFor(modelItem => item.Picture)" alt="Image" width="100" />
+                <h3>@Html.DisplayFor(modelItem => item.Model)</h3>
+                <p><strong>Brand: </strong>@Html.DisplayFor(modelItem => item.BrandName)</p>
+                <p><strong>Category: </strong>@Html.DisplayFor(modelItem => item.CategoryName)</p>
+            </div>
+            <hr />
+            <div style="display: flex; justify-content: space-between;">
+                <div>
+                    <p><strong>Color: </strong>@Html.DisplayFor(modelItem => item.Color)</p>
+                    <p><strong>Quantity: </strong>@Html.DisplayFor(modelItem => item.Quantity)</p>
+                </div>
+                <div>
+                    <p><strong>Price: </strong>@Html.DisplayFor(modelItem => item.Price)$</p>
+                    <p><strong>Discount: </strong>@Html.DisplayFor(modelItem => item.Discount)%</p>
+                </div>
+            </div>
             @if (this.User.Identity.IsAuthenticated)
             {
-                <th>Order</th>
+                <hr />
+                <div style="text-align: center;">
+                    @await Html.PartialAsync("_OrderPartialView", new OrderConfirmVM { PhoneId = item.Id })
+                </div>
             }
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Model)
-            </td>
-           @* <td>
-                @Html.DisplayFor(modelItem => item.BrandId)
-            </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.BrandName)
-            </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.CategoryId)
-            </td>*@
-            <td>
-                @Html.DisplayFor(modelItem => item.CategoryName)
-            </td>
-            <td>
-                    <img src="@Html.DisplayFor(modelItem => item.Picture)" alt="Image" width="100" />
-               @* @Html.DisplayFor(modelItem => item.Picture)*@
-            </td>
-           @* <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.Color)
-                </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Discount)
-            </td>
-            @if (this.User.Identity.IsAuthenticated)
+            <hr />
+            <div style="text-align: center;">
+                <a asp-action="Details" asp-route-id="@item.Id" style="padding: 5px 10px; background-color: #4CAF50; color: white; border-radius: 5px;">Details</a>
+                @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
                 {
-                    <td>
-                        @await Html.PartialAsync("_OrderPartialView", new OrderConfirmVM
-                   { PhoneId = item.Id })
-                    </td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" style="padding: 5px 10px; background-color: #008CBA; color: white; border-radius: 5px;">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" style="padding: 5px 10px; background-color:#DC143C; color: white; border-radius: 5px;">Delete</a>
                 }
-                <td>
-                    @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
-                    {
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                    }|
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
-                    {
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    }
-
-                </td>
-        </tr>
-}
-    </tbody>
-</table>
+            </div>
+        </div>
+    }
+</div>
 @section Scripts{
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

@@ -1,0 +1,53 @@
+﻿@if (TempData["MessageSent"] != null)
+{
+    <div class="alert">@TempData["MessageSent"]</div>
+}
+<div class="contact-form-container">
+    <div class="contact-info">
+        <h3>Contact Information</h3>
+        <p><i class="fa fa-phone"></i> Telephone: 087969602</p>
+        <p><i class="fa fa-envelope"></i> Email: a.aleksiev2018@pmg-pernik.com</p>
+    </div>
+
+    <form method="post">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" name="firstName" id="firstName" value="@Model.FirstName" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" name="lastName" id="lastName" value="@Model.LastName" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" id="email" value="@Model.Email" required>
+        </div>
+        <div class="form-group">
+            <label for="comment">Comment</label>
+            <textarea class="form-control" name="comment" id="comment" required>@Model.Comment</textarea>
+        </div>
+        <button type="submit" class="submit-button">Send</button>
+    </form>
+</div>
+
+<style>
+    .contact-form-container {
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+        padding: 20px;
+        width: 600px;
+        margin: 0 auto;
+        border-radius :25px
+    }
+
+    .submit-button {
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+
+

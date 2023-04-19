@@ -86,6 +86,114 @@
     }|
     <a asp-action="Index">Back to List</a>
 </div>
+<style>
+    body {
+        background: linear-gradient(to bottom, #7F8C8D,#D3D3D3);
+    }
+
+    .navbar {
+        background-color: #333;
+        border-radius: 25px; /* add rounded corners */
+        height: 65px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+
+        .nav-links li {
+            margin: 0 10px;
+        }
+
+        .nav-links a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 20px; /* add rounded corners */
+        }
+
+            .nav-links a:hover {
+                background-color: #000000;
+            }
+    .reviews-container {
+        border: 5px solid #87CEEB;
+        padding: 20px;
+        border-radius: 25px;
+    }
+
+    .reviews-container {
+  border: 5px solid #708090;
+  padding: 40px 20px 20px; /* add more top padding */
+  border-radius: 25px;
+  position: relative;
+}
+
+/* Position the previous button */
+.carousel-control-prev {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  margin-right: 300px; /* add a negative margin to the right */
+}
+
+/* Position the next button */
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  right: -0;
+  transform: translateY(-50%);
+  margin-left: 300px; /* add a negative margin to the left */
+}
+
+
+</style>
+<div style="height: 15px;"></div>
+<div class="reviews-container">
+    <div id="reviews-slideshow" class="carousel slide" data-ride="true">
+
+        <!-- Slideshow items -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="review-item">
+                    <h3>Checheneca</h3>
+                    <p>"Excellent service, fast delivery, and great quality products."</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="review-item">
+                    <h3>Tosho Kukata</h3>
+                    <p>I am very satisfied with my purchase, thank you for the exceptional customer service.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="review-item">
+                    <h3>Vasko Dalaverata</h3>
+                    <p>Highly recommend this company for their professionalism and attention to detail.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation buttons -->
+        <a class="carousel-control-prev" href="#reviews-slideshow" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#reviews-slideshow" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+
+    </div>
+</div>
+
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

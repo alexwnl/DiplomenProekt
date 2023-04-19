@@ -1,11 +1,40 @@
 ﻿<!DOCTYPE html>
 <style>
+    body {
+        background: linear-gradient(to bottom, #7F8C8D,#D3D3D3);
+    }
 
-   body {
-        background: linear-gradient(to bottom, #de6262, #ffb88c);
+    .navbar {
+        border-radius: 25px; /* add rounded corners */
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  padding: 10px;
 }
 
+.navbar img {
+  width: 81px;
+  margin-right: 10px;
+}
 
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+   
 </style>
 <html lang="en">
 <head>
@@ -19,11 +48,13 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">PhoneShop</a>
+                <img src="https://us.123rf.com/450wm/logoking33/logoking332108/logoking33210805770/173624694-ps-sp-logo-design-vector-template.jpg?ver=6" alt="Logo">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
@@ -32,12 +63,19 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
+                         @{
+                           bool isAuthorized = User.IsInRole("Client") || User.IsInRole("Administrator");
+                             }
+                         @if (isAuthorized)
+                            {
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="MyOrders">MyOrders</a>
-                        </li>
+                        </li> 
+                            }
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Phone" asp-action="Index">Phones</a>
                         </li>
+                        
                         @if ((this.User.Identity.IsAuthenticated)&&(this.User.IsInRole("Administrator")))
                         {
                             <li class="nav-item active">
@@ -51,12 +89,14 @@
                                      Statistic Modul
                              </a>
                               
-                          <div class="dropdown-menu" aria-labelledby="dropdown MenuLink">
-                                     <a class="dropdown-item" asp-controller="Client"asp-action="Index">Clients</a>
-                                     <a class="dropdown-item" href="/Statistics/Orders">Orders</a>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <a class="dropdown-item" asp-controller="Client" asp-action="Index">Clients</a>
+                                        <a class="dropdown-item" asp-controller="Order" asp-action="Index">Orders</a>
                                         <a class="dropdown-item" asp-controller="Statistics" asp-action="Index">Statistics</a>
-                              </div>
-                              </div>
+                                        <a class="dropdown-item" asp-controller="Contact" asp-action="Index"><i class="fa fa-envelope"></i> MessageList</a>
+                                    </div>
+
+                                    </div>
                               </li>
                         }
                     </ul>
@@ -70,10 +110,37 @@
             @RenderBody()
         </main>
     </div>
+    <style>
+       .social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.social-icons a {
+  margin: 0 10px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  opacity: 0.7; /* Change to your desired opacity */
+}
+
+.social-icons a img {
+  width: 10px; /* Change to your desired width */
+  height: 10px; /* Change to your desired height */
+}
+    </style>
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2023 - PhoneShop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <a href="https://www.facebook.com/" target="_blank"><img src="" alt="Facebook"></a>
+            <a href="https://www.twitter.com/" target="_blank"><img src="" alt="Twitter"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="" alt="Instagram"></a>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <text>- <a asp-area="" asp-controller="Contact" asp-action="ContactUs">ContactUs</a></text>
+            }
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -82,4 +149,3 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 
-</html>
