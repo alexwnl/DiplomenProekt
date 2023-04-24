@@ -1,15 +1,17 @@
-﻿@if (TempData["MessageSent"] != null)
+﻿
+@if (TempData["MessageSent"] != null)
 {
     <div class="alert">@TempData["MessageSent"]</div>
 }
 <div class="contact-form-container">
-    <div class="contact-info">
+    <div style="text-align: center;">
         <h3>Contact Information</h3>
         <p><i class="fa fa-phone"></i> Telephone: 087969602</p>
         <p><i class="fa fa-envelope"></i> Email: a.aleksiev2018@pmg-pernik.com</p>
     </div>
 
-    <form method="post">
+
+    <form asp-controller="Contact" asp-action="ContactUs" method="post">
         <div class="form-group">
             <label for="firstName">First Name</label>
             <input type="text" class="form-control" name="firstName" id="firstName" value="@Model.FirstName" required>
@@ -26,8 +28,9 @@
             <label for="comment">Comment</label>
             <textarea class="form-control" name="comment" id="comment" required>@Model.Comment</textarea>
         </div>
-        <button type="submit" class="submit-button">Send</button>
+        <button type="submit" class="submit-button btn-primary">Send</button>
     </form>
+    
 </div>
 
 <style>
@@ -50,4 +53,12 @@
     }
 </style>
 
+<div style="height: 15px;"></div>
+<div style="text-align: center;">
+    <h3>Where to find us:</h3>
+<div style="display: flex; justify-content: center;">
+    <div style="border-radius: 20px; overflow: hidden;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d5224.11019634947!2d23.363437556975008!3d42.70514330100276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbg!4v1682104689067!5m2!1sen!2sbg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</div>
 

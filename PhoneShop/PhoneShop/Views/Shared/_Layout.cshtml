@@ -111,36 +111,22 @@
         </main>
     </div>
     <style>
-       .social-icons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.social-icons a {
-  margin: 0 10px;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.social-icons a:hover {
-  opacity: 0.7; /* Change to your desired opacity */
-}
-
-.social-icons a img {
-  width: 10px; /* Change to your desired width */
-  height: 10px; /* Change to your desired height */
-}
+     
     </style>
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - PhoneShop - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            <a href="https://www.facebook.com/" target="_blank"><img src="" alt="Facebook"></a>
-            <a href="https://www.twitter.com/" target="_blank"><img src="" alt="Twitter"></a>
-            <a href="https://www.instagram.com/" target="_blank"><img src="" alt="Instagram"></a>
-            @if (User.Identity.IsAuthenticated)
-            {
-                <text>- <a asp-area="" asp-controller="Contact" asp-action="ContactUs">ContactUs</a></text>
-            }
+            
+            <a href="https://www.facebook.com/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" width="25" height="25" alt="Facebook"></a>
+            <a href="https://www.twitter.com/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/87/87390.png" width="25" height="25" alt="Twitter"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/20/20673.png" width="25" height="25" alt="Instagram"></a>
+            <div style="float:right;">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a href="/Contact/ContactUs">
+                        <img src="https://static.thenounproject.com/png/4972750-200.png" width="35" height="35" alt="Contact Us">
+                    </a>
+                }
+            </div>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

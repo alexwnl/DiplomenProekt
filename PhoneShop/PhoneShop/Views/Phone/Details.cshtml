@@ -4,87 +4,82 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<style>
+   .rounded-box {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-<div>
-    <h4>PhoneDetailsVM</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Model)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Model)
-        </dd>
-        @*<dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BrandId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.BrandId)
-        </dd>*@
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.BrandName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.BrandName)
-        </dd>
-       @* <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CategoryId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CategoryId)
-        </dd>*@
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CategoryName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CategoryName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Picture)
-        </dt>
-        <dd class = "col-sm-10">
-              <img src="@Html.DisplayFor(model => model.Picture)" alt="Image" width="100" />
-           @* @Html.DisplayFor(model => model.Picture)*@
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Color)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Color)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Quantity)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Quantity)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Discount)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Discount)
-        </dd>
-    </dl>
-</div>
-<div>
-    @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
-    {
-         <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> 
-    }|
-    <a asp-action="Index">Back to List</a>
+.green-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.green-button:hover {
+  background-color: #3e8e41;
+}
+</style>
+
+<div class="d-flex justify-content-center">
+    <div class="rounded-box">
+        <h1>Details</h1>
+        <hr>
+        <dl>
+            <div class="row">
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Model)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Model)</dd>
+            </div>
+            <div class="row">
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.BrandName)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.BrandName)</dd>
+            </div>
+            <div class="row">
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.CategoryName)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.CategoryName)</dd>
+            </div>
+            <div class="row">
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Picture)</dt>
+                <dd class="col-sm-8"><img src="@Html.DisplayFor(model => model.Picture)" alt="Image" width="100" /></dd>
+            </div>
+            <div class="row">
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Color)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Color)</dd>
+            </div>
+            <div class="row">
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Description)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Description)</dd>
+            </div>
+            <div class="row">
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Quantity)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Quantity)</dd>
+            </div>
+            <div class="row">
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Price)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Price)</dd>
+            </div>
+            <div class="row">
+                <dt class="col-sm-4">@Html.DisplayNameFor(model => model.Discount)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Discount)</dd>
+            </div>
+        </dl>
+        <div class="d-flex justify-content-between">
+            @if ((this.User.Identity.IsAuthenticated) && (this.User.IsInRole("Administrator")))
+            {
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="green-button">Edit</a>
+            }
+            <a asp-action="Index" class="green-button">Back to List</a>
+        </div>
+    </div>
 </div>
 <style>
     body {
@@ -122,38 +117,24 @@
             .nav-links a:hover {
                 background-color: #000000;
             }
-    .reviews-container {
-        border: 5px solid #87CEEB;
-        padding: 20px;
-        border-radius: 25px;
+
+            .carousel-inner{
+                margin:0 auto;
+        text-align: center
+            }
+
+    .carousel-controls {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px; /* increase or decrease as needed */
+        align-items: center; /* align the buttons vertically */
     }
 
-    .reviews-container {
-  border: 5px solid #708090;
-  padding: 40px 20px 20px; /* add more top padding */
-  border-radius: 25px;
-  position: relative;
-}
-
-/* Position the previous button */
-.carousel-control-prev {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  margin-right: 300px; /* add a negative margin to the right */
-}
-
-/* Position the next button */
-.carousel-control-next {
-  position: absolute;
-  top: 50%;
-  right: -0;
-  transform: translateY(-50%);
-  margin-left: 300px; /* add a negative margin to the left */
-}
-
-
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: auto;
+        padding: 0 10px;
+    }
 </style>
 <div style="height: 15px;"></div>
 <div class="reviews-container">
@@ -165,35 +146,54 @@
                 <div class="review-item">
                     <h3>Checheneca</h3>
                     <p>"Excellent service, fast delivery, and great quality products."</p>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                   
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="review-item">
                     <h3>Tosho Kukata</h3>
                     <p>I am very satisfied with my purchase, thank you for the exceptional customer service.</p>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="review-item">
                     <h3>Vasko Dalaverata</h3>
                     <p>Highly recommend this company for their professionalism and attention to detail.</p>
+                      <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
+            <span class="star">&#9733;</span>
                 </div>
             </div>
-        </div>
-
-        <!-- Navigation buttons -->
+             <div class="carousel-controls">
         <a class="carousel-control-prev" href="#reviews-slideshow" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
+
         </a>
-        <a class="carousel-control-next" href="#reviews-slideshow" role="button" data-slide="next">
+     <a class="carousel-control-next" href="#reviews-slideshow" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
+    </div>
+        </div>
 
     </div>
-</div>
 
+    <!-- Navigation buttons -->
+   
+
+</div>
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");

@@ -1,59 +1,29 @@
 ﻿@model IEnumerable<PhoneShop.Models.ContactUs.ContactMessage>
 
-<h1>Contact Messages</h1>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Comment</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var message in Model)
-        {
+<div style="border-radius: 10px; padding: 10px; background-color: #f0f0f0;">
+    <h1>Contact Messages</h1>
+    <table class="table">
+        <thead>
             <tr>
-                <td>@message.FirstName</td>
-                <td>@message.LastName</td>
-                <td>@message.Email</td>
-                <td>@message.Comment</td>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Comment</th>
             </tr>
-        }
-    </tbody>
-</table>
-
+        </thead>
+        <tbody>
+            @foreach (var message in Model)
+            {
+                <tr>
+                    <td>@message.FirstName</td>
+                    <td>@message.LastName</td>
+                    <td>@message.Email</td>
+                    <td>@message.Comment</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 <style>
-    /* Set border and background color for the table */
-    .table {
-        border: 2px solid #ccc;
-        border-radius: 25px;
-        background-color: #f8f8f8;
-        width: 100%;
-        margin-top: 20px;
-    }
-
-        /* Set font style and size for the table headers */
-        .table th {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            font-weight: bold;
-            text-align: left;
-            padding: 10px;
-            background-color: #eee;
-        }
-
-        /* Set font style and size for the table cells */
-        .table td {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            text-align: left;
-            padding: 10px;
-        }
-
-        /* Set background color for the table rows on hover */
-        .table tbody tr:hover {
-            background-color: #e0e0e0;
-        }
+    
 </style>

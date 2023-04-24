@@ -34,10 +34,11 @@ namespace PhoneShop.Controllers
                 _context.ContactMessages.Add(sentMessage);
                 _context.SaveChanges();
 
-                return RedirectToAction("ContactUsResult", "Home");
+                return RedirectToAction("ContactUsResult" , "Contact");
             }
             return View();
         }
+        public ActionResult ContactUsResult() { return this.View();}
         public async Task<IActionResult> Index()
         {
             var messages = await _context.ContactMessages.ToListAsync();

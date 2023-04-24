@@ -4,79 +4,86 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Confirm</h1>
-<form asp-controller="Order" asp-action="Create" method="post">
-<div>
-    <h4>OrderConfirmVM</h4>
-    <hr />
-    <dl class="row">
-      @*  <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.UserId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UserId)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.User)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.User)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PhoneId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PhoneId)
-        </dd>*@
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Model)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Model)
-        </dd>
-        
-        <dt class = "col-sm-2">
-                <img src="@Html.DisplayFor(model => model.Picture)" alt="Image" width="100" />
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Picture)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Quantity)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Quantity)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Discount)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Discount)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TotalPrice)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TotalPrice)
-        </dd>
-    </dl>
-     </div>
-        <div class="form-group">
-            <input type="submit" value="Confirm" class="btn btn-primary" />
-        </div>
-        <input type="hidden" asp-for="PhoneId" value="@Model.PhoneId" />
-    <input type="hidden" asp-for="Quantity" value="@Model.Quantity" />
-    <input type="hidden" asp-for="UserId" value="@Model.UserId" />
-    <input type="hidden" asp-for="Price" value="@Model.Price" />
-    <input type="hidden" asp-for="Discount" value="@Model.Discount" />
-</form>
-<div>
-    <a asp-controller="Phone" asp-action="Index">Back to List</a>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .rounded-box {
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        .green-button {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="rounded-box">
+        <h1>Confirm</h1>
+        <form asp-controller="Order" asp-action="Create" method="post">
+            <div>
+                <h4>OrderConfirmVM</h4>
+                <hr />
+                <dl class="row">
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Model)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Model)
+                    </dd>
+
+                    <dt class="col-sm-2">
+                        <img src="@Html.DisplayFor(model => model.Picture)" alt="Image" width="100" />
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Picture)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Quantity)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Quantity)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Price)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Price)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.Discount)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.Discount)
+                    </dd>
+                    <dt class="col-sm-2">
+                        @Html.DisplayNameFor(model => model.TotalPrice)
+                    </dt>
+                    <dd class="col-sm-10">
+                        @Html.DisplayFor(model => model.TotalPrice)
+                    </dd>
+                </dl>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Confirm" class="btn btn-primary green-button" />
+            </div>
+            <input type="hidden" asp-for="PhoneId" value="@Model.PhoneId" />
+            <input type="hidden" asp-for="Quantity" value="@Model.Quantity" />
+            <input type="hidden" asp-for="UserId" value="@Model.UserId" />
+            <input type="hidden" asp-for="Price" value="@Model.Price" />
+            <input type="hidden" asp-for="Discount" value="@Model.Discount" />
+        </form>
+        <div> <a asp-controller="Phone" asp-action="Index" class="green-button">Back to List</a> </div> <style>
+                                                                                                            .green-button {
+                                                                                                                padding: 10px 5px;
+                                                                                                                font-size: 14px;
+                                                                                                            }
+        </style>
+    </div>
+</body>
+</html>
 
